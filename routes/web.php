@@ -11,6 +11,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::get('/course', function () {
+    return view('course');
+});
+
 
 Route::get('/auth/redirect/google', function () {
     return Socialite::driver('google')->redirect();
