@@ -52,11 +52,173 @@ Route::get('/', function () {
         ]
     ]);
 });
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', [
+        "api"=>[
+            "1"=>[
+            "title"=>"Tutorial menggunakan figma untuk pemula",
+            "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+            "total"=>14,
+            "type"=>"teknologi",
+            "jenjang"=>"sekolah menengah atas"
+            ],
+            "2"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "3"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "4"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "5"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ]
+        ]
+    ]);
 });
+
 Route::get('/course', function () {
-    return view('course');
+    return view('course', [
+        "api"=>[
+            "1"=>[
+            "title"=>"Tutorial menggunakan figma untuk pemula",
+            "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+            "total"=>14,
+            "type"=>"teknologi",
+            "jenjang"=>"sekolah menengah atas"
+            ],
+            "2"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "3"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "4"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "5"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ]
+        ]
+    ]) ;
+});
+
+Route::get('/quiz', function () {
+    return view('quiz', [
+        "api"=>[
+            "1"=>[
+            "title"=>"Tutorial menggunakan figma untuk pemula",
+            "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+            "total"=>14,
+            "type"=>"teknologi",
+            "jenjang"=>"sekolah menengah atas"
+            ],
+            "2"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "3"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "4"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "5"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ]
+        ]
+    ]);
+});
+
+Route::get('/history', function () {
+    return view('history', [
+        "api"=>[
+            "1"=>[
+            "title"=>"Tutorial menggunakan figma untuk pemula",
+            "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+            "total"=>14,
+            "type"=>"teknologi",
+            "jenjang"=>"sekolah menengah atas"
+            ],
+            "2"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "3"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "4"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ],
+            "5"=>[
+                "title"=>"Tutorial menggunakan figma untuk pemula",
+                "description"=>"lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
+                "total"=>14,
+                "type"=>"teknologi",
+                "jenjang"=>"sekolah menengah atas"
+            ]
+        ]
+    ]);
 });
 
 

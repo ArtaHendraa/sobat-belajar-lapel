@@ -9,10 +9,12 @@ use Illuminate\View\Component;
 class DashboardHeader extends Component
 {
     public $image;
+    public $page;
 
-    public function __construct($image)
+    public function __construct($image, $page)
     {
         $this->image = $image;
+        $this->page = $page;
     }
 
     public function render()
