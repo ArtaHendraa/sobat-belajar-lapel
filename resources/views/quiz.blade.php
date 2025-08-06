@@ -6,10 +6,8 @@
     <main class="flex items-start bg-[#f5f7fb]">
         <!-- sidebar -->
         <x-sidebar />
-
         <section class=" w-full relative mb-10">
-            <x-dashboard-header image="/PP.jpg" page="course" />
-
+            <x-dashboard-header image="/PP.jpg" page="quiz" />
             <div class="py-10 px-10 flex items-start">
                 <div class="w-full">
                     <form action="" class="relative">
@@ -25,6 +23,7 @@
 
                     <div class="mt-5 flex flex-col gap-5">
                         <h1 class="font-semibold -mb-2">10 Results</h1>
+
                         @foreach ($api as $id => $item)
                             <div class="border border-black/10 bg-white p-3.5 rounded-2xl flex gap-2.5">
                                 <div class="rounded-xl">
@@ -55,6 +54,7 @@
 
                 <aside class="bg-white sticky top-10 p-5 ml-10 w-1/2 border border-black/20 rounded-xl">
                     <h1 class="capitalize text-3xl font-semibold">filter</h1>
+
                     <h2 class="capitalize text-xl font-semibold mt-5">tingkatan</h2>
                     <form class="mx-5 mt-2.5">
                         <div class="flex items-center gap-2">
@@ -95,7 +95,10 @@
                         </div>
                     </form>
                 </aside>
+
             </div>
         </section>
+
+
     </main>
 @endsection

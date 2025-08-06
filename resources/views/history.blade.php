@@ -1,14 +1,12 @@
 @extends('layouts.app')
-
 @section('title', 'Dashboard')
-
 @section('content')
     <main class="flex items-start bg-[#f5f7fb]">
         <!-- sidebar -->
         <x-sidebar />
 
         <section class=" w-full relative mb-10">
-            <x-dashboard-header image="/PP.jpg" page="course" />
+            <x-dashboard-header image="/PP.jpg" page="history" />
 
             <div class="py-10 px-10 flex items-start">
                 <div class="w-full">
@@ -19,6 +17,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
+
                         <input type="text" class="border border-black/20 rounded-xl py-3 w-full px-14 focus:outline-none"
                             placeholder="Search">
                     </form>
@@ -55,47 +54,23 @@
 
                 <aside class="bg-white sticky top-10 p-5 ml-10 w-1/2 border border-black/20 rounded-xl">
                     <h1 class="capitalize text-3xl font-semibold">filter</h1>
-                    <h2 class="capitalize text-xl font-semibold mt-5">tingkatan</h2>
-                    <form class="mx-5 mt-2.5">
-                        <div class="flex items-center gap-2">
-                            <input type="checkbox">
-                            <h2>Sekolah Dasar (SD)</h2>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <input type="checkbox">
-                            <h2>Sekolah Menengah Pertama (SMP)</h2>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <input type="checkbox">
-                            <h2>Sekolah Menengah Atas (SMA)</h2>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <input type="checkbox">
-                            <h2>Umum</h2>
-                        </div>
-                    </form>
 
-                    <h2 class="capitalize text-xl font-semibold mt-5">kategori</h2>
+                    <h2 class="capitalize text-xl font-semibold mt-5">waktu</h2>
                     <form class="mx-5 mt-2.5">
-                        <div class="flex items-center gap-2">
-                            <input type="checkbox">
-                            <h2>Teknologi</h2>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <input type="checkbox">
-                            <h2>Umum</h2>
-                        </div>
                         <div class="flex items-center gap-2">
                             <input type="checkbox">
                             <h2>Terbaru</h2>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="checkbox">
-                            <h2>Matematika</h2>
+                            <h2>Terlama</h2>
                         </div>
                     </form>
                 </aside>
+
             </div>
         </section>
+
+
     </main>
 @endsection
