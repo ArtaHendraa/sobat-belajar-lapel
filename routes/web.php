@@ -48,7 +48,6 @@ Route::get('/', function () {
                     'link' => '/kursus/matematika'
                 ]
             ]
-
         ]
     ]);
 });
