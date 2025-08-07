@@ -6,7 +6,50 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'data' => [
+            'program' => [
+                "1" => [
+                    "title" => "Mentor Berpengalaman",
+                    "deskripsi" => "Belajar langsung dari mentor yang udah ahli di bidangnya & aktif di industri."
+                ],
+                "2" => [
+                    "title" => "Akses Gratis 100%",
+                    "deskripsi" => "Semua materi bisa kamu akses tanpa bayar, tanpa batas waktu, tanpa daftar pun bisa langsung belajar."
+                ],
+                "3" => [
+                    "title" => "Belajar Fleksibel",
+                    "deskripsi" => "Bisa belajar dari HP/laptop, kapan pun & di mana pun. Bebas stress."
+                ]
+            ],
+            'materi-unggulan' => [
+                "1" => [
+                    'title' => "Matematika",
+                    'deskripsi' => "Pelajari konsep dasar hingga lanjutan seperti aljabar, geometri, dan statistika secara mudah dan interaktif.",
+                    'img' => '/assets/mtk.png',
+                    'link' => '/kursus/matematika'
+                ],
+                "2" => [
+                    'title' => "Ilmu Pengetahuan Alam (IPA)",
+                    'deskripsi' => "Kenali dunia sains dari fisika, kimia, hingga biologi yang dikemas dengan contoh kehidupan nyata.",
+                    'img' => '/assets/mtk.png',
+                    'link' => '/kursus/matematika'
+                ],
+                "3" => [
+                    'title' => "Bahasa Indonesia",
+                    'deskripsi' => "Tingkatkan kemampuan membaca, menulis, dan memahami bahasa Indonesia dengan materi yang ringkas dan jelas.",
+                    'img' => '/assets/mtk.png',
+                    'link' => '/kursus/matematika'
+                ],
+                "4" => [
+                    'title' => "Bahasa Inggris",
+                    'deskripsi' => "Belajar grammar, vocabulary, dan speaking dengan metode menyenangkan dan cocok buat pemula.",
+                    'img' => '/assets/mtk.png',
+                    'link' => '/kursus/matematika'
+                ]
+            ]
+        ]
+    ]);
 });
 
 Route::get('/dashboard', function () {
