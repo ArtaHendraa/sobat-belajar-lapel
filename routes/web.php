@@ -220,7 +220,6 @@ Route::get('/history', function () {
     ]);
 });
 
-
 Route::get('/auth/redirect/google', function () {
     return Socialite::driver('google')->redirect();
 });
