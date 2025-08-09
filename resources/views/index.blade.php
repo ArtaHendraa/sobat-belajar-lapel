@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
@@ -8,12 +8,12 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
     <style>
-    .text-gradient {
-        background: linear-gradient(90deg, #5755FE, #FF71CD);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+        .text-gradient {
+            background: linear-gradient(90deg, #5755FE, #FF71CD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 
@@ -33,7 +33,7 @@
                         <div
                             class="nav-link hidden md:flex col-span-1 items-center justify-center gap-8 font-medium text-gray-600">
                             <a href="#" class="hover:text-[#5755FE] transition-colors">Kursus</a>
-                            <a href="#" class="hover:text-[#5755FE] transition-colors">Program</a>
+                            <a href="#program" class="hover:text-[#5755FE] transition-colors">Program</a>
                             <a href="#" class="hover:text-[#5755FE] transition-colors">Testimoni</a>
                         </div>
 
@@ -121,10 +121,10 @@
                 <div
                     class="rounded-3xl bg-gradient-to-br from-[#6a68ff] to-[#5755FE] w-full p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 shadow-2xl shadow-[#5755FE]/20">
                     @foreach ($data['program'] as $program)
-                    <div class="program-card flex flex-col gap-4 text-white/90">
-                        <h3 class="text-2xl font-bold text-white">{{ $program['title'] }}</h3>
-                        <p class="text-white/80">{{ $program['deskripsi'] }}</p>
-                    </div>
+                        <div class="program-card flex flex-col gap-4 text-white/90">
+                            <h3 class="text-2xl font-bold text-white">{{ $program['title'] }}</h3>
+                            <p class="text-white/80">{{ $program['deskripsi'] }}</p>
+                        </div>
                     @endforeach
                     <div class="program-card flex flex-col gap-4 text-white/90">
                         <h3 class="text-2xl font-bold text-white">Standar Industri</h3>
@@ -135,7 +135,8 @@
             </section>
             <section class="why-us grid lg:grid-cols-2 gap-12 items-center my-20 md:my-28">
                 <div class="text-content">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-5">Kenapa Harus <span class="text-gradient">Sobat
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-5">Kenapa Harus <span
+                            class="text-gradient">Sobat
                             Belajar?</span></h2>
                     <p class="text-gray-600 lg:text-lg my-4">Kami percaya pendidikan berkualitas harus bisa diakses
                         siapa saja. Cukup login dengan akun Google, dan ribuan materi siap menantimu. Gratis selamanya.
@@ -157,25 +158,27 @@
                         alt="Dashboard Sobat Belajar">
                 </div>
             </section>
-            <section class="container-materi-unggulan my-20 md:my-28">
+            <section class="container-materi-unggulan my-20 md:my-28" id="program">
                 <h2 class="text-center font-extrabold text-4xl md:text-5xl mb-4">Kursus Paling <span
                         class="text-gradient">Populer</span></h2>
                 <p class="text-center text-lg text-gray-500 mb-12">Dipilih dan dicintai oleh ribuan sobat lainnya.</p>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach ($data['materi-unggulan'] as $materi)
-                    <div
-                        class="card-materi bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
-                        <img class="w-full h-48 object-cover" src="{{ $materi['img'] }}" alt="{{ $materi['title'] }}">
-                        <div class="p-6 flex flex-col gap-4">
-                            <h3 class="font-bold text-xl h-14">{{ $materi['title'] }}</h3>
-                            <p class="text-gray-600 text-sm flex-grow h-20">{{ Str::limit($materi['deskripsi'], 100) }}
-                            </p>
-                            <button
-                                class="w-full mt-4 bg-[#5755FE] text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-[#4341d9] transition-colors duration-300">
-                                Lihat Detail
-                            </button>
+                        <div
+                            class="card-materi bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
+                            <img class="w-full h-48 object-cover" src="{{ $materi['img'] }}"
+                                alt="{{ $materi['title'] }}">
+                            <div class="p-6 flex flex-col gap-4">
+                                <h3 class="font-bold text-xl h-14">{{ $materi['title'] }}</h3>
+                                <p class="text-gray-600 text-sm flex-grow h-20">
+                                    {{ Str::limit($materi['deskripsi'], 100) }}
+                                </p>
+                                <button
+                                    class="w-full mt-4 bg-[#5755FE] text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-[#4341d9] transition-colors duration-300">
+                                    Lihat Detail
+                                </button>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </section>
