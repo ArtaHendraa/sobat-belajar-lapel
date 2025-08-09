@@ -17,28 +17,24 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
-                <input type="text"
-                    class="w-full border border-gray-300 bg-white rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#5755FE]"
-                    placeholder="Cari kursus favoritmu...">
+                <form action="{{ route('course.search') }}" method="GET" class="mb-4">
+                    <input type="text" name="search"
+                        class="w-full border border-gray-300 bg-white rounded-xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#5755FE]"
+                        placeholder="Cari kursus favoritmu..." value="{{ request('search') }}">
+                </form>
             </div>
+
             <div class="mt-10">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Kategori</h3>
                 <div class="flex items-center gap-3 overflow-x-auto pb-3">
-                    {{-- Tombol kategori bisa dari data dinamis atau hardcode --}}
-                    <a href="#"
-                        class="px-5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-[#5755FE] text-white">Semua</a>
-                    <a href="#"
-                        class="px-5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 transition">UI/UX
-                        Design</a>
-                    <a href="#"
-                        class="px-5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 transition">Web
-                        Development</a>
-                    <a href="#"
-                        class="px-5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 transition">Marketing</a>
-                    <a href="#"
-                        class="px-5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 transition">Data
-                        Science</a>
+                    @foreach ($categories as $item)
+                    <a href="{{ route('course.search') }}?search={{ $item->type }}"
+                        class="px-5 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-[#5755FE] hover:text-white">
+                        {{ $item->type }}
+                    </a>
+                    @endforeach
                 </div>
+
             </div>
 
             <hr class="my-8">

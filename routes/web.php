@@ -86,6 +86,7 @@ Route::get('logout', function () {
 Route::resource('dashboard', DashboardController::class)->middleware('checkSession');
 
 Route::resource('/course', CourseController::class)->middleware('checkSession');
+Route::get('/find', [CourseController::class, 'search'])->name('course.search')->middleware('checkSession');
 
 Route::get('/content/{id}/materi/{materi_id?}', [ContentController::class, 'show'])->middleware('checkSession');
 Route::get('/chat', function () {

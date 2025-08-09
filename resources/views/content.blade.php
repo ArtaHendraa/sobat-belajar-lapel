@@ -10,7 +10,7 @@ use App\Models\MaterialContent;
         <!-- Breadcrumb -->
         <div class="flex items-center text-xs lg:text-sm text-gray-500 mb-4 overflow-x-auto whitespace-nowrap">
             <span class="flex items-center">
-                📚 Course
+                Course
             </span>
             <span class="mx-2">/</span>
             <span>{{$course['type']}}</span>
@@ -20,7 +20,8 @@ use App\Models\MaterialContent;
 
         <!-- Page Title -->
         <div class="flex items-start lg:items-center gap-2 lg:gap-4 mb-2">
-            <a href="/course"><button class="text-gray-600 hover:text-gray-800 text-xl mt-1 lg:mt-0 flex-shrink-0">
+            <a href="/course"><button
+                    class="text-gray-600 hover:text-gray-800 font-bold text-xl mt-1 lg:mt-0 flex-shrink-0">
                     ←
                 </button></a>
             <div class="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4 min-w-0 flex-1">

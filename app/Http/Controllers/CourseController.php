@@ -16,6 +16,24 @@ class CourseController extends Controller
         return view('course', compact('courses'));
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        // Ambil kategori unik dari semua data
+        $categories = Course::select('type')->distinct()->get();
+
+        // Filter course berdasarkan title atau type
+        $courses = Course::when($search, function ($query, $search) {
+            return $query->where('title', 'like', "%{$search}%")
+                ->orWhere('type', 'like', "%{$search}%");
+        })->get();
+
+        return view('course', compact('courses', 'search', 'categories'));
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      */
