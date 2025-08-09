@@ -4,6 +4,7 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeminiController;
+use App\Http\Controllers\HistoryController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -95,3 +96,5 @@ Route::get('/chat', function () {
 
 // Route API untuk diakses oleh JavaScript, mengarah ke method baru kita
 Route::post('/ask-gemini-direct', [GeminiController::class, 'askDirect'])->name('gemini.ask.direct');
+
+Route::get('/history', [HistoryController::class, 'index'])->middleware('checkSession');
