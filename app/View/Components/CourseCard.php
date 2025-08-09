@@ -9,17 +9,15 @@ class CourseCard extends Component
     public $image;
     public $title;
     public $category;
-    public $total;
-    public $level;
     public $link;
+    public $description;
 
-    public function __construct($image, $title, $category, $total, $level, $link)
+    public function __construct($image, $title, $category, $link, $description)
     {
         $this->image = $image;
         $this->title = $title;
         $this->category = $category;
-        $this->total = $total;
-        $this->level = $level;
+        $this->description = $description;
         $this->link = $link;
     }
 
@@ -28,4 +26,3 @@ class CourseCard extends Component
         return view('components.course-card');
     }
 }
-
