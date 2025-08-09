@@ -13,7 +13,9 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        return view('course', compact('courses'));
+        $categories = Course::select('type')->distinct()->get(); // kategori unik
+
+        return view('course', compact('courses', 'categories'));
     }
 
     public function search(Request $request)
