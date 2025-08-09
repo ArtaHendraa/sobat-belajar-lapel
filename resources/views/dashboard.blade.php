@@ -42,7 +42,7 @@
                 @if (!empty($courses))
                 @foreach ($courses as $id => $item)
                 <x-course-card image="/cover-corse.png" title="{{ $item['title'] }}"
-                    description="{{ $item['description'] }}" category="{{ $item['type'] }}" link="/kursus/figma" />
+                    description="{{ $item['description'] }}" category="{{ $item['type'] }}" link="/content" />
                 @endforeach
                 @else
                 {{-- Tampilan jika tidak ada kursus terakhir --}}

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GeminiController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -158,6 +159,7 @@ Route::get('/auth/google/callback', function () {
     ]);
 
     Session::put('user_id', $user->id);
+    Session::put('user_avatar', $user->avatar);
 
     return redirect('/dashboard'); // atau kemana aja
 });
@@ -177,3 +179,9 @@ Route::resource('/course', CourseController::class)->middleware('checkSession');
 
 Route::get('content', fn() => view('content'));
 Route::get('partner', fn() => view('partner'));
+Route::get('/chat', function () {
+    return view('chat');
+});
+
+// Route API untuk diakses oleh JavaScript, mengarah ke method baru kita
+Route::post('/ask-gemini-direct', [GeminiController::class, 'askDirect'])->name('gemini.ask.direct');

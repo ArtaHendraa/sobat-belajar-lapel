@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Course')
 
 @section('content')
 <main class="flex items-start bg-[#f5f7fb] min-h-screen">
     <x-sidebar />
 
     <section class="w-full relative pb-10">
-        <x-dashboard-header image="/PP.jpg" page="course" />
+        <x-dashboard-header image="{{session('user_avatar')}}" page="course" />
 
         <div class="w-full p-4 md:p-8">
             <div class="relative w-full max-w-2xl mx-auto">
@@ -64,16 +64,16 @@
     </section>
 </main>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('toggleButton');
-    const filter = document.getElementById('filter');
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('toggleButton');
+        const filter = document.getElementById('filter');
 
-    toggleBtn.addEventListener('click', () => {
-        filter.classList.toggle('hidden');
+        toggleBtn.addEventListener('click', () => {
+            filter.classList.toggle('hidden');
+        });
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('overflow-y-hidden');
+        });
     });
-    toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('overflow-y-hidden');
-    });
-});
 </script>
 @endsection

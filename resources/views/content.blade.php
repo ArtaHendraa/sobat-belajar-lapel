@@ -17,9 +17,9 @@
 
         <!-- Page Title -->
         <div class="flex items-start lg:items-center gap-2 lg:gap-4 mb-2">
-            <button class="text-gray-600 hover:text-gray-800 text-xl mt-1 lg:mt-0 flex-shrink-0">
-                ←
-            </button>
+            <a href="/course"><button class="text-gray-600 hover:text-gray-800 text-xl mt-1 lg:mt-0 flex-shrink-0">
+                    ←
+                </button></a>
             <div class="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4 min-w-0 flex-1">
                 <h1 class="text-lg lg:text-2xl font-semibold text-gray-900 break-words">
                     Tutorial menggunakan figma
