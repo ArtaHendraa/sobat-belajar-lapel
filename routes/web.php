@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeminiController;
@@ -44,12 +45,6 @@ Route::get('/', function () {
                     'deskripsi' => "Tingkatkan kemampuan membaca, menulis, dan memahami bahasa Indonesia dengan materi yang ringkas dan jelas.",
                     'img' => '/assets/mtk.png',
                     'link' => '/kursus/matematika'
-                ],
-                "4" => [
-                    'title' => "Bahasa Inggris",
-                    'deskripsi' => "Belajar grammar, vocabulary, dan speaking dengan metode menyenangkan dan cocok buat pemula.",
-                    'img' => '/assets/mtk.png',
-                    'link' => '/kursus/matematika'
                 ]
             ]
         ]
@@ -57,91 +52,6 @@ Route::get('/', function () {
 });
 
 
-
-
-Route::get('/quiz', function () {
-    return view('quiz', [
-        "api" => [
-            "1" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "2" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "3" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "4" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "5" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ]
-        ]
-    ]);
-});
-
-Route::get('/history', function () {
-    return view('history', [
-        "api" => [
-            "1" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "2" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "3" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "4" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ],
-            "5" => [
-                "title" => "Tutorial menggunakan figma untuk pemula",
-                "description" => "lorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledaklorem ipsum dolor sit amet biji meledak...",
-                "total" => 14,
-                "type" => "teknologi",
-                "jenjang" => "sekolah menengah atas"
-            ]
-        ]
-    ]);
-});
 
 Route::get('/auth/redirect/google', function () {
     return Socialite::driver('google')->redirect();
@@ -177,11 +87,10 @@ Route::resource('dashboard', DashboardController::class)->middleware('checkSessi
 
 Route::resource('/course', CourseController::class)->middleware('checkSession');
 
-Route::get('content', fn() => view('content'));
-Route::get('partner', fn() => view('partner'));
+Route::get('/content/{id}/materi/{materi_id?}', [ContentController::class, 'show'])->middleware('checkSession');
 Route::get('/chat', function () {
     return view('chat');
-});
+})->middleware('checkSession');
 
 // Route API untuk diakses oleh JavaScript, mengarah ke method baru kita
 Route::post('/ask-gemini-direct', [GeminiController::class, 'askDirect'])->name('gemini.ask.direct');

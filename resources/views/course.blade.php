@@ -49,10 +49,13 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 @if (!empty($courses))
+                @php
+                $id = 0;
+                @endphp
                 @foreach ($courses as $id => $item)
-                <x-course-card image="/cover-corse.png" title="{{ $item['title'] }}"
-                    description="{{ $item['description'] }}" category="{{ $item['type'] }}" link="/kursus/figma"
-                    :progress="rand(10,90)" />
+                <x-course-card image="{{$item['image']}}" title="{{ $item['title'] }}"
+                    description="{{ $item['description'] }}" category="{{ $item['type'] }}"
+                    link="/content/{{ $item['id'] }}/materi/{{ $id+1 }}" :progress="rand(10,90)" />
                 @endforeach
                 @else
                 <div class="col-span-full text-center py-20 bg-white rounded-2xl">

@@ -40,17 +40,17 @@
             {{-- item course --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 @if (!empty($courses))
+                @php
+                $id = 0;
+                @endphp
                 @foreach ($courses as $id => $item)
-                <x-course-card image="/cover-corse.png" title="{{ $item['title'] }}"
-                    description="{{ $item['description'] }}" category="{{ $item['type'] }}" link="/content" />
+                <x-course-card image="{{$item['image']}}" title="{{ $item['title'] }}"
+                    description="{{ $item['description'] }}" category="{{ $item['type'] }}"
+                    link="/content/{{ $item['id'] }}/materi/{{ $id+1 }}" :progress="rand(10,90)" />
                 @endforeach
                 @else
-                {{-- Tampilan jika tidak ada kursus terakhir --}}
-                <div class="col-span-full text-center py-10 bg-white rounded-2xl">
-                    <p class="text-gray-500">Kamu belum memulai kursus apapun. Yuk, mulai petualangan pertamamu!</p>
-                    <a href="#"
-                        class="text-white bg-[#5755FE] px-5 py-2 rounded-lg inline-block mt-4 font-semibold">Cari
-                        Kursus</a>
+                <div class="col-span-full text-center py-20 bg-white rounded-2xl">
+                    <p class="text-gray-500">Oops! Kursus tidak ditemukan.</p>
                 </div>
                 @endif
             </div>
