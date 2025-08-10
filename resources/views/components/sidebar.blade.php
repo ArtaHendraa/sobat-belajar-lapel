@@ -5,7 +5,7 @@
             <div class="mb-6">
                 <header class="flex items-center gap-2 my-9">
                     <img src="/sobat-belajar.svg" alt="">
-                    <h1 class="text-[#1674BE] text-xl capitalize font-bold">sobat belajar</h1>
+                    <h1 class="text-[#1674BE] text-xl capitalize font-bold">ngertiin</h1>
                 </header>
                 <h2 class="text-base font-semibold text-gray-600 capitalize mb-4">
                     main menu
