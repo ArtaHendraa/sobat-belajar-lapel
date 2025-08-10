@@ -8,16 +8,16 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
     <style>
-    .text-gradient {
-        background: linear-gradient(90deg, #5755FE, #FF71CD);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+        .text-gradient {
+            background: linear-gradient(90deg, #5755FE, #FF71CD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 scroll-smooth">
     <div class="container mx-auto max-w-7xl px-4">
         <header x-data="{ isOpen: false }" class="relative bg-gray-50">
             <div class="container mx-auto max-w-7xl px-4">
@@ -32,9 +32,9 @@
 
                         <div
                             class="nav-link hidden md:flex col-span-1 items-center justify-center gap-8 font-medium text-gray-600">
-                            <a href="#" class="hover:text-[#5755FE] transition-colors">Kursus</a>
-                            <a href="#" class="hover:text-[#5755FE] transition-colors">Program</a>
-                            <a href="#" class="hover:text-[#5755FE] transition-colors">Testimoni</a>
+                            <a href="/auth/redirect/google" class="hover:text-[#5755FE] transition-colors">Kursus</a>
+                            <a href="#program" class="hover:text-[#5755FE] transition-colors">Program</a>
+                            <a href="#populer" class="hover:text-[#5755FE] transition-colors">Populer</a>
                         </div>
 
                         <div class="hidden md:flex col-span-1 justify-end">
@@ -70,12 +70,12 @@
                 @click.away="isOpen = false"
                 class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg rounded-b-lg z-50">
                 <div class="px-5 pt-2 pb-5 flex flex-col space-y-3">
-                    <a href="#"
+                    <a href="/auth/redirect/google"
                         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#5755FE] hover:bg-gray-50">Kursus</a>
-                    <a href="#"
+                    <a href="#program"
                         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#5755FE] hover:bg-gray-50">Program</a>
-                    <a href="#"
-                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#5755FE] hover:bg-gray-50">Testimoni</a>
+                    <a href="#populer"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#5755FE] hover:bg-gray-50">Populers</a>
 
                     <hr class="my-3">
 
@@ -88,7 +88,7 @@
             </div>
         </header>
         <main>
-            <section class="hero-section grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-12 md:py-20">
+            <section id="hero" class="hero-section grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-12 md:py-20">
                 <div class="headline flex flex-col gap-6 md:-mt-15 text-center lg:text-left">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold !leading-tight tracking-tight">
                         Buka Potensi
@@ -109,15 +109,18 @@
                 <div class="image-grid hidden lg:grid grid-cols-2 gap-4">
                     <img src="/assets/hero-1.png" alt="Siswa sedang belajar"
                         class="rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 aspect-square object-cover">
-                    <img src="/assets/hero-1.png" alt="Diskusi kelompok"
+                    <img src="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Diskusi kelompok"
                         class="rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 aspect-square object-cover mt-8">
-                    <img src="/assets/hero-1.png" alt="Coding di laptop"
+                    <img src="https://images.unsplash.com/photo-1515615200917-f9623be1d8b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Coding di laptop"
                         class="rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 aspect-square object-cover">
-                    <img src="/assets/hero-1.png" alt="Presentasi di depan kelas"
+                    <img src="https://images.unsplash.com/photo-1453748866136-b1dd97284f49?q=80&w=1118&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Presentasi di depan kelas"
                         class="rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 aspect-square object-cover mt-8">
                 </div>
             </section>
-            <section class="program my-20">
+            <section id="program" class="program my-20">
                 <div
                     class="rounded-3xl bg-gradient-to-br from-[#6a68ff] to-[#5755FE] w-full p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 shadow-2xl shadow-[#5755FE]/20">
                     @foreach ($data['program'] as $program)
@@ -157,7 +160,7 @@
                         alt="Dashboard Sobat Belajar">
                 </div>
             </section>
-            <section class="container-materi-unggulan my-20 md:my-28">
+            <section id="populer" class="container-materi-unggulan my-20 md:my-28">
                 <h2 class="text-center font-extrabold text-4xl md:text-5xl mb-4">Kursus Paling <span
                         class="text-gradient">Populer</span></h2>
                 <p class="text-center text-lg text-gray-500 mb-12">Dipilih dan dicintai oleh ribuan sobat lainnya.</p>

@@ -30,22 +30,23 @@ Route::get('/', function () {
             ],
             'materi-unggulan' => [
                 "1" => [
-                    'title' => "Matematika",
-                    'deskripsi' => "Pelajari konsep dasar hingga lanjutan seperti aljabar, geometri, dan statistika secara mudah dan interaktif.",
-                    'img' => '/assets/mtk.png',
-                    'link' => '/kursus/matematika'
+                    'title' => "UI/UX Design for Beginners",
+                    'deskripsi' => "Kuasai fundamental desain antarmuka dan pengalaman pengguna (UI/UX). Belajar tentang wireframing, prototyping, riset pengguna, dan cara membuat desain yang disukai pengguna",
+                    'img' => 'https://jayjay.co/wp-content/uploads/2025/02/1-2-scaled.jpg',
+                    'link' => '/content/12/materi/8'
                 ],
                 "2" => [
-                    'title' => "Ilmu Pengetahuan Alam (IPA)",
-                    'deskripsi' => "Kenali dunia sains dari fisika, kimia, hingga biologi yang dikemas dengan contoh kehidupan nyata.",
-                    'img' => '/assets/mtk.png',
-                    'link' => '/kursus/matematika'
+                    'title' => "Full-Stack Web Development Bootcamp",
+                    'deskripsi' => "Pelajari cara membangun aplikasi web modern dari awal. Materi mencakup HTML, CSS, JavaScript, React, Node.js, dan database untuk menjadi seorang developer handal.",
+                    'img' => 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    'link' => '/content/11/materi/1'
                 ],
                 "3" => [
-                    'title' => "Bahasa Indonesia",
-                    'deskripsi' => "Tingkatkan kemampuan membaca, menulis, dan memahami bahasa Indonesia dengan materi yang ringkas dan jelas.",
-                    'img' => '/assets/mtk.png',
-                    'link' => '/kursus/matematika'
+                    'title' => "Introduction to Data Science
+",
+                    'deskripsi' => "Selami dunia data science. Pelajari Python untuk analisis data, algoritma machine learning, dan teknik visualisasi data untuk mengubah data menjadi wawasan berharga.",
+                    'img' => 'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    'link' => '/content/14/materi/4'
                 ]
             ]
         ]
